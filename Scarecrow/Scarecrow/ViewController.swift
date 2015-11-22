@@ -8,14 +8,15 @@
 
 import UIKit
 import LocalAuthentication
+import Alamofire
 
 let authenticatedKey = "authenticated"
 let unauthenticatedKey = "unauthenticated"
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
-    var devices = ["device 1", "device 2", "device 3", "device 4", "device 5", "device 6", "device 7", "device 8", "device 9", "device 10"]
-    
+    var devices = ["device_1", "device_2", "device_3"]
+
     @IBOutlet var status: UIView!
     @IBOutlet var statusLabel: UILabel!
     @IBOutlet var devicesCollection: UICollectionView!
@@ -30,6 +31,17 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         authenticateWithTouchID()
     }
 
+    func httpGet(url: String) {
+        Alamofire.request(.GET, url)
+            .responseJSON { response in
+                return response.result.value
+        }
+    }
+    
+    func httpPost(url: String, parameters: [String: String]) {
+        Alamofire.request(.POST, url, parameters: parameters)
+    }
+    
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return devices.count
     }
@@ -48,6 +60,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func setAuthenticated() {
         status.backgroundColor = UIColor(red: 0, green: 0.6, blue: 0, alpha: 0.6)
         statusLabel.text = "Authenticated"
+        
+        let parameters = ["": ""]
+        httpPost("http://192.168.64.205:8080/auth", parameters: parameters)
     }
     
     func showDevices() {

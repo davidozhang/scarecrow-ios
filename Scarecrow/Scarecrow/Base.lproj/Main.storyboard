@@ -47,6 +47,9 @@
                                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ucI-DI-tlB">
                                                             <rect key="frame" x="38" y="69" width="51" height="31"/>
                                                             <animations/>
+                                                            <connections>
+                                                                <action selector="stateChanged:" destination="vak-1B-edq" eventType="valueChanged" id="2rc-oK-X1F"/>
+                                                            </connections>
                                                         </switch>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Device" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Jz-E9-LJj">
                                                             <rect key="frame" x="0.0" y="0.0" width="125" height="61"/>

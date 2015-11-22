@@ -1,0 +1,3 @@
+[submodule "Scarecrow/Alamofire"]
+	path = Scarecrow/Alamofire
+	url = https://github.com/Alamofire/Alamofire.git
