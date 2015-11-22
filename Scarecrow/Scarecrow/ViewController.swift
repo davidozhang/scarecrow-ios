@@ -15,7 +15,7 @@ let unauthenticatedKey = "unauthenticated"
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
-    var devices = ["device_1", "device_2", "device_3"]
+    var devices = ["device_1", "device_2", "device_3", "microphone", "buzzer", "button"]
 
     @IBOutlet var status: UIView!
     @IBOutlet var statusLabel: UILabel!
